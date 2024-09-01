@@ -17,7 +17,7 @@ namespace ToDoAPI.Services
 
             request.Content = JsonContent.Create(toDo);
 
-            await client.SendAsync(request);
+            var response = await client.SendAsync(request);
         }
 
         public async Task<List<ToDo>?> GetAllToDos()
@@ -30,7 +30,14 @@ namespace ToDoAPI.Services
 
             var result = await response.Content.ReadAsStringAsync();
 
-            List<ToDo>? toDos = JsonSerializer.Deserialize<List<ToDo>>(result);
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            };
+
+
+            List<ToDo>? toDos = JsonSerializer.Deserialize<List<ToDo>>(result, options);
 
             return toDos;
         }
@@ -45,7 +52,13 @@ namespace ToDoAPI.Services
 
             var result = await response.Content.ReadAsStringAsync();
 
-            ToDo? toDo = JsonSerializer.Deserialize<ToDo>(result);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            };
+
+
+            ToDo? toDo = JsonSerializer.Deserialize<ToDo>(result, options);
 
             return toDo;
         }

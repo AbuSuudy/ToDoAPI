@@ -72,7 +72,7 @@ namespace ToDoAPI.Controllers
             {
                 await _ToDoService.CreateToDo(toDo);
 
-                return Ok();
+                return Created();
             }
             catch (Exception ex)
             {
