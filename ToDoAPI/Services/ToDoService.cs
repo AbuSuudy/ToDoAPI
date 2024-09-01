@@ -31,13 +31,7 @@ namespace ToDoAPI.Services
             var result = await response.Content.ReadAsStringAsync();
 
 
-            var options = new JsonSerializerOptions
-            {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            };
-
-
-            List<ToDo>? toDos = JsonSerializer.Deserialize<List<ToDo>>(result, options);
+            List<ToDo>? toDos = JsonSerializer.Deserialize<List<ToDo>>(result);
 
             return toDos;
         }
@@ -52,13 +46,9 @@ namespace ToDoAPI.Services
 
             var result = await response.Content.ReadAsStringAsync();
 
-            var options = new JsonSerializerOptions
-            {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            };
 
 
-            ToDo? toDo = JsonSerializer.Deserialize<ToDo>(result, options);
+            ToDo? toDo = JsonSerializer.Deserialize<ToDo>(result);
 
             return toDo;
         }

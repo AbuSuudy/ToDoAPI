@@ -53,7 +53,7 @@ namespace ToDoIntegrationTest
             var response = await client.SendAsync(request);
 
             // Assert   
-            Assert.Equivalent(response.StatusCode, 200);
+            Assert.Equivalent(response.StatusCode, 204);
 
         }
 
