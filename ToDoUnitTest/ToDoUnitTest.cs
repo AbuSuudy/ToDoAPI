@@ -78,7 +78,7 @@ namespace ToDoUnitTest
             ToDoController sut = new ToDoController(ToDoService.Object, logger.Object);
 
             //Act
-            StatusCodeResult actual = (StatusCodeResult) await sut.GetToDo(1);
+            StatusCodeResult actual = (StatusCodeResult)await sut.GetToDo(1);
 
             //Assert
             Assert.Equal(expected, actual.StatusCode);

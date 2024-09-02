@@ -57,7 +57,7 @@ namespace ToDoAPI.Services
         {
             var data = await GetAllToDos();
 
-            if(data == null)
+            if (data == null)
             {
                 return null;
             }

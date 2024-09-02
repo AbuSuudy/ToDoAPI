@@ -50,7 +50,7 @@ namespace ToDoAPI.Controllers
         }
 
         [HttpGet(Name = "GetToDoSummary")]
-        public async Task<IActionResult>  GetToDoSummary()
+        public async Task<IActionResult> GetToDoSummary()
         {
             try
             {

@@ -1,6 +1,4 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using System.Net.Http.Json;
 using ToDoAPI.Models;
 
@@ -71,7 +69,7 @@ namespace ToDoIntegrationTest
 
             request.Content = JsonContent.Create(new ToDo
             {
- 
+
             });
 
 

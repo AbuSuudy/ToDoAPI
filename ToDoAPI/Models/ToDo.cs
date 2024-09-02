@@ -11,7 +11,7 @@ namespace ToDoAPI.Models
         public int Id { get; set; }
         [Required]
         [JsonPropertyName("title")]
-        public  string Title { get; set; }
+        public string Title { get; set; }
         [JsonPropertyName("completed")]
         public bool Completed { get; set; }
     }
